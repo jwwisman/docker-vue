@@ -1,0 +1,27 @@
+# language: generic
+# sudo: required
+# services: 
+#   - docker
+
+# before_install:
+#   - docker build -t jwwisman/docker-vue -f Dockerfile.dev .
+
+# script:
+#   - docker run jwwisman/docker-vue npm run test -- --coverage
+
+
+# deploy:
+#   provider: elasticbeanstalk
+#   # region depends on which region the environment was created in (on AWS)
+#   region: "us-west-2"
+#   app: "docker-vue"
+#   env: "Docker-vue-env"
+#   bucket_name: "elasticbeanstalk-us-west-2-235562342"
+#   bucket_path: "docker-vue"
+#   # only deploy when we push to master
+#   on:
+#     branch: master
+#   # the keys AWS_ACCESS_KEY and AWS_SECRET_KEY are environment variables within
+#   # the project on Travis-CI
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
